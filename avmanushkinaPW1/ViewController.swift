@@ -9,16 +9,15 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet var views: [UIView]!
-    // Переменная, позволяющая избавиться от магического числа.
+    // MARK: Max corner radius
     let maxRadius: CGFloat = 25
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-    // Функция, вызывающаяся при нажатии на кнопку.
+    // MARK: Function, called on the user pressing the button
     @IBAction func buttonWasPressed(_ sender: Any) {
         let button = sender as? UIButton
-        // Деактивация кнопки.
         button?.isEnabled = false
         var set = Set<UIColor>()
          while set.count < views.count {
@@ -31,7 +30,7 @@ class ViewController: UIViewController {
          )
          )
          }
-            
+        // MARK: Color change animation
         UIView.animate(
             withDuration: 1,
                     animations: {
